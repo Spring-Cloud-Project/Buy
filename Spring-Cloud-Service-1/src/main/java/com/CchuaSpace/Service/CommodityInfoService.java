@@ -1,8 +1,10 @@
 package com.CchuaSpace.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,9 +40,33 @@ public class CommodityInfoService {
 
 		List<CommodityInfo> user = commodityInfoMapper.SelectCommodityByNumber(json.get(0).getCommodityNumber());
 
+		
+		
+		
 		String jsons = JSON.toJSONString(user);
 
 		List<CommodityInfoVo> data = JSON.parseArray(jsons.toString(), CommodityInfoVo.class);
+		
+		
+/*	List<NafmiiMemberInfo> list = req.getNafmiiMemberInfo();
+		*/
+/*	List<CommodityInfoVo> tempList = new ArrayList<CommodityInfoVo>();*/
+		
+		
+		/*//把得到的数据转换成要导入的数据
+		for (CommodityInfo commodityInfo : user) {
+			CommodityInfoVo temp = new CommodityInfoVo();
+
+		BeanUtils.copyProperties(temp,commodityInfo);
+		*/
+		//这个方法就是用来做copy属性的.
+
+		/*temp.setBatchNo(batchNo);
+		tempList.add(temp);
+		}
+		
+*/
+	/*	BeanUtils.copyProperties(tempList, user); */
 
 		return data;
 
