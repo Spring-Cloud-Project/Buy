@@ -56,7 +56,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@Api(value = "购物车列表", description = "订单列表")
+@Api(value = "购物车列表", description = "订单列表 order_info")
 @RequestMapping(value = "/OrderInfo")
 public class OrderInfoController {
 

@@ -76,7 +76,7 @@ import io.swagger.annotations.ApiResponses;
 @Controller
 @RestController
 @RequestMapping(value = "/Catalog")
-@Api(value = "目录列表的相关操作", description = "目录列表")
+@Api(value = "目录列表的相关操作", description = "目录列表 commodity_catalog")
 
 public class CommodityCatalogController {
 

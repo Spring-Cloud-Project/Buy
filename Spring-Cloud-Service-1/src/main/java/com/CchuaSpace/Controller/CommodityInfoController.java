@@ -89,7 +89,7 @@ import io.swagger.annotations.ApiResponses;
 @RestController
 
 @RequestMapping(value = "/Commodit")
-@Api(value = "商品信息表", description = "商品信息列表")
+@Api(value = "商品信息表", description = "商品信息列表commodity_info")
 
 
 public class CommodityInfoController   {
