@@ -4,13 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 
-	<groupId>com.CchuaSpace</groupId>
+	<groupId>com.cchuaspace</groupId>
 	<artifactId>Spring-Cloud-Feign</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name></name>
 	<description>Spring Cloud project</description>
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -18,7 +19,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-
+ 
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
