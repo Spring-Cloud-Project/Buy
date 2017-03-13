@@ -1,4 +1,4 @@
-package com.CchuaSpace.Hystrix;
+package com.cchuaspace.hystrix;
 
 import java.util.List;
 
@@ -7,9 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.CchuaSpace.Model.TableUser;
-import com.CchuaSpace.Service.ComputeClient;
 import com.alibaba.fastjson.JSON;
+import com.cchuaspace.model.PaginationVo;
+import com.cchuaspace.model.TableUser;
+import com.cchuaspace.service.ComputeClient;
 
 @Component
 public class ComputeClientHystrix implements ComputeClient {
@@ -44,8 +45,8 @@ public class ComputeClientHystrix implements ComputeClient {
 
 
 	@Override
-	public ResponseEntity<List<TableUser>> SelectUserId(String selectUserId) {
-	       return new ResponseEntity<List<TableUser>>(HttpStatus.FORBIDDEN);  
+	public ResponseEntity<PaginationVo> SelectUserId(String selectUserId) {
+	       return new ResponseEntity<PaginationVo>(HttpStatus.FORBIDDEN);  
 
 	}
 

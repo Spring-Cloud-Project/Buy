@@ -1,4 +1,4 @@
- package com.CchuaSpace.Service;
+ package com.cchuaspace.service;
 
 import java.util.List;
 
@@ -20,13 +20,14 @@ public interface ComputeClient {
 compute-service
 */
 
-import com.CchuaSpace.Hystrix.CommodityInfoHystrix;
-import com.CchuaSpace.Hystrix.ComputeClientHystrix;
-import com.CchuaSpace.Hystrix.OrderInfoHystrix;
-import com.CchuaSpace.Hystrix.TableUserClientHystrix;
-import com.CchuaSpace.Model.CommodityInfo;
-import com.CchuaSpace.Model.OrderInfo;
-import com.CchuaSpace.Model.TableUser;
+import com.cchuaspace.hystrix.CommodityInfoHystrix;
+import com.cchuaspace.hystrix.ComputeClientHystrix;
+import com.cchuaspace.hystrix.OrderInfoHystrix;
+import com.cchuaspace.hystrix.TableUserClientHystrix;
+import com.cchuaspace.model.CommodityInfo;
+import com.cchuaspace.model.OrderInfo;
+import com.cchuaspace.model.PaginationVo;
+import com.cchuaspace.model.TableUser;
 
 
 @FeignClient(value = "Server-Service", fallback = OrderInfoHystrix.class)
@@ -37,10 +38,14 @@ public interface OrderInfoClient {
 	
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/OrderInfo/DeleteByNumber")
-	ResponseEntity<List<OrderInfo>> DeleteByNumber(String DeleteCommodityByNumber);
+	ResponseEntity<PaginationVo> DeleteByNumber(String DeleteCommodityByNumber);
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/OrderInfo/DeleteById")
-	ResponseEntity<List<OrderInfo>> DeleteById(String DeleteCommodityById);
+	ResponseEntity<PaginationVo> DeleteById(String DeleteCommodityById);
+
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/OrderInfo/DeleteById")
+	ResponseEntity<PaginationVo> SelectByNumber(String deleteByNumber);
 	
 	
 	

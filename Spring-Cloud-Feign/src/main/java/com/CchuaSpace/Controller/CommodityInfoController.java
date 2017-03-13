@@ -1,4 +1,4 @@
-package com.CchuaSpace.Controller;
+package com.cchuaspace.controller;
 
 
 
@@ -55,17 +55,16 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
-import com.CchuaSpace.Currency.AesUtils;
-import com.CchuaSpace.Currency.RSAUtils;
-
-import com.CchuaSpace.Model.CommodityInfo;
-import com.CchuaSpace.Model.TableUser;
-import com.CchuaSpace.Service.CommodityInfoClient;
-import com.CchuaSpace.Service.TableUserClient;
 import com.alibaba.fastjson.JSON;
 
 import com.alibaba.fastjson.JSONStreamAware;
+import com.cchuaspace.currency.AesUtils;
+import com.cchuaspace.currency.RSAUtils;
+import com.cchuaspace.model.CommodityInfo;
+import com.cchuaspace.model.PaginationVo;
+import com.cchuaspace.model.TableUser;
+import com.cchuaspace.service.CommodityInfoClient;
+import com.cchuaspace.service.TableUserClient;
 import com.mysql.cj.core.exceptions.PasswordExpiredException;
 
 import groovy.lang.IntRange;
@@ -99,8 +98,8 @@ public class CommodityInfoController {
 		/*--------------- -----<----*查询*---->--- ----------------------*/
 
 	@RequestMapping(value = "/SelectCommodityByNumber", method = RequestMethod.POST)
-		public ResponseEntity<List<CommodityInfo>> SelectCommodityByNumber(@RequestBody String SelectCommodityByNumber, Model model) {		
-      	ResponseEntity<List<CommodityInfo>> user = commodityInfoClient.SelectCommodityByNumber(SelectCommodityByNumber);
+		public ResponseEntity<PaginationVo> SelectCommodityByNumber(@RequestBody String SelectCommodityByNumber, Model model) {		
+      	ResponseEntity<PaginationVo> user = commodityInfoClient.SelectCommodityByNumber(SelectCommodityByNumber);
     	return user;
 
 	
@@ -108,15 +107,15 @@ public class CommodityInfoController {
 	
 	
 	@RequestMapping(value = "/SelectCommodityById", method = RequestMethod.POST)
-	public ResponseEntity<List<CommodityInfo>> SelectCommodityById(@RequestBody String SelectCommodityById, Model model) {		
-  	ResponseEntity<List<CommodityInfo>> user = commodityInfoClient.SelectCommodityById(SelectCommodityById);
+	public ResponseEntity<PaginationVo> SelectCommodityById(@RequestBody String SelectCommodityById, Model model) {		
+  	ResponseEntity<PaginationVo> user = commodityInfoClient.SelectCommodityById(SelectCommodityById);
 	return user;
 
 	}
 	
 	@RequestMapping(value = "/SelectCommodityInfo", method = RequestMethod.POST)
-	public ResponseEntity<List<CommodityInfo>> SelectCommodityInfo(@RequestBody String SelectCommodityInfo, Model model) {		
-  	ResponseEntity<List<CommodityInfo>> user = commodityInfoClient.SelectCommodityInfo(SelectCommodityInfo);
+	public ResponseEntity<PaginationVo> SelectCommodityInfo(@RequestBody String SelectCommodityInfo, Model model) {		
+  	ResponseEntity<PaginationVo> user = commodityInfoClient.SelectCommodityInfo(SelectCommodityInfo);
 	return user;
 
 	}
@@ -124,15 +123,15 @@ public class CommodityInfoController {
 	/*--------------- -----<----*删除*---->--- ----------------------*/
 
 	@RequestMapping(value = "/DeleteCommodityByNumber", method = RequestMethod.POST)
-	public ResponseEntity<List<CommodityInfo>> DeleteCommodityByNumber(@RequestBody String DeleteCommodityByNumber, Model model) {		
-  	ResponseEntity<List<CommodityInfo>> user = commodityInfoClient.DeleteCommodityByNumber(DeleteCommodityByNumber);
+	public ResponseEntity<PaginationVo> DeleteCommodityByNumber(@RequestBody String DeleteCommodityByNumber, Model model) {		
+  	ResponseEntity<PaginationVo> user = commodityInfoClient.DeleteCommodityByNumber(DeleteCommodityByNumber);
 	return user;
 
 	}
 	
 	@RequestMapping(value = "/DeleteCommodityById", method = RequestMethod.POST)
-	public ResponseEntity<List<CommodityInfo>> DeleteCommodityById(@RequestBody String DeleteCommodityById, Model model) {		
-  	ResponseEntity<List<CommodityInfo>> user = commodityInfoClient.DeleteCommodityById(DeleteCommodityById);
+	public ResponseEntity<PaginationVo> DeleteCommodityById(@RequestBody String DeleteCommodityById, Model model) {		
+  	ResponseEntity<PaginationVo> user = commodityInfoClient.DeleteCommodityById(DeleteCommodityById);
 	return user;
 	}
 	
@@ -140,8 +139,8 @@ public class CommodityInfoController {
 
 
 	@RequestMapping(value = "/InsertCommodityInfo", method = RequestMethod.POST)
-	public ResponseEntity<List<CommodityInfo>> InsertCommodityInfo(@RequestBody String InsertCommodityInfo, Model model) {		
-  	ResponseEntity<List<CommodityInfo>> user = commodityInfoClient.InsertCommodityInfo(InsertCommodityInfo);
+	public ResponseEntity<PaginationVo> InsertCommodityInfo(@RequestBody String InsertCommodityInfo, Model model) {		
+  	ResponseEntity<PaginationVo> user = commodityInfoClient.InsertCommodityInfo(InsertCommodityInfo);
 	return user;
 	}
 	
@@ -150,15 +149,15 @@ public class CommodityInfoController {
 	
 	
 	@RequestMapping(value = "/UpdCommodityInfoById", method = RequestMethod.POST)
-	public ResponseEntity<List<CommodityInfo>> UpdCommodityInfoById(@RequestBody String UpdCommodityInfoById, Model model) {		
-  	ResponseEntity<List<CommodityInfo>> user = commodityInfoClient.UpdCommodityInfoById(UpdCommodityInfoById);
+	public ResponseEntity<PaginationVo> UpdCommodityInfoById(@RequestBody String UpdCommodityInfoById, Model model) {		
+  	ResponseEntity<PaginationVo> user = commodityInfoClient.UpdCommodityInfoById(UpdCommodityInfoById);
 	return user;
 
 	}
 	
 	@RequestMapping(value = "/UpdCommodityInfoByNumber", method = RequestMethod.POST)
-	public ResponseEntity<List<CommodityInfo>> UpdCommodityInfoByNumber(@RequestBody String UpdCommodityInfoByNumber, Model model) {		
-  	ResponseEntity<List<CommodityInfo>> user = commodityInfoClient.UpdCommodityInfoByNumber(UpdCommodityInfoByNumber);
+	public ResponseEntity<PaginationVo> UpdCommodityInfoByNumber(@RequestBody String UpdCommodityInfoByNumber, Model model) {		
+  	ResponseEntity<PaginationVo> user = commodityInfoClient.UpdCommodityInfoByNumber(UpdCommodityInfoByNumber);
 	return user;
 
 	}

@@ -1,4 +1,4 @@
- package com.CchuaSpace.Service;
+ package com.cchuaspace.service;
 
 import java.util.List;
 
@@ -18,8 +18,9 @@ public interface ComputeClient {
 compute-service
 */
 
-import com.CchuaSpace.Hystrix.ComputeClientHystrix;
-import com.CchuaSpace.Model.TableUser;
+import com.cchuaspace.hystrix.ComputeClientHystrix;
+import com.cchuaspace.model.PaginationVo;
+import com.cchuaspace.model.TableUser;
 
 
 @FeignClient(value = "Server-Service", fallback = ComputeClientHystrix.class)
@@ -41,7 +42,7 @@ public interface ComputeClient {
 	String login();
 
 	@RequestMapping(method = RequestMethod.POST, value = "/SelectuserID")
-	ResponseEntity<List<TableUser>> SelectUserId(String selectUserId);
+	ResponseEntity<PaginationVo> SelectUserId(String selectUserId);
 
 
 }

@@ -1,4 +1,4 @@
-package com.CchuaSpace.Controller;
+package com.cchuaspace.controller;
 
 /*
  * ****************<--*---Code information---*-->**************
@@ -30,15 +30,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.CchuaSpace.Currency.AesUtils;
-import com.CchuaSpace.Currency.RSAUtils;
-import com.CchuaSpace.Model.CommodityInfo;
-import com.CchuaSpace.Model.DetailedList;
-import com.CchuaSpace.Model.OrderInfo;
-import com.CchuaSpace.Service.CommodityInfoClient;
-import com.CchuaSpace.Service.DetailedListClient;
-import com.CchuaSpace.Service.OrderInfoClient;
-import com.CchuaSpace.Service.TableUserClient;
+import com.cchuaspace.currency.AesUtils;
+import com.cchuaspace.currency.RSAUtils;
+import com.cchuaspace.model.CommodityInfo;
+import com.cchuaspace.model.DetailedList;
+import com.cchuaspace.model.OrderInfo;
+import com.cchuaspace.model.PaginationVo;
+import com.cchuaspace.service.CommodityInfoClient;
+import com.cchuaspace.service.DetailedListClient;
+import com.cchuaspace.service.OrderInfoClient;
+import com.cchuaspace.service.TableUserClient;
 
 import io.swagger.annotations.Api;
 
@@ -51,18 +52,26 @@ public class OrderInfoController {
 	/*--------------- -----<----*查询*---->--- ----------------------*/
 
 
+	
+	@RequestMapping(value = "/SelectByNumber", method = RequestMethod.POST)
+	public ResponseEntity<PaginationVo> SelectByNumber(@RequestBody String DeleteByNumber, Model model) {		
+  	ResponseEntity<PaginationVo> user = orderInfoClient.SelectByNumber(DeleteByNumber);
+	return user;
+
+	}
+	
 	/*--------------- -----<----*删除*---->--- ----------------------*/
 
 	@RequestMapping(value = "/DeleteByNumber", method = RequestMethod.POST)
-	public ResponseEntity<List<OrderInfo>> DeleteByNumber(@RequestBody String DeleteByNumber, Model model) {		
-  	ResponseEntity<List<OrderInfo>> user = orderInfoClient.DeleteByNumber(DeleteByNumber);
+	public ResponseEntity<PaginationVo> DeleteByNumber(@RequestBody String DeleteByNumber, Model model) {		
+  	ResponseEntity<PaginationVo> user = orderInfoClient.DeleteByNumber(DeleteByNumber);
 	return user;
 
 	}
 	
 	@RequestMapping(value = "/DeleteById", method = RequestMethod.POST)
-	public ResponseEntity<List<OrderInfo>> DeleteCommodityById(@RequestBody String DeleteCommodityById, Model model) {		
-  	ResponseEntity<List<OrderInfo>> user = orderInfoClient.DeleteById(DeleteCommodityById);
+	public ResponseEntity<PaginationVo> DeleteCommodityById(@RequestBody String DeleteCommodityById, Model model) {		
+  	ResponseEntity<PaginationVo> user = orderInfoClient.DeleteById(DeleteCommodityById);
 	return user;
 	}
 	 

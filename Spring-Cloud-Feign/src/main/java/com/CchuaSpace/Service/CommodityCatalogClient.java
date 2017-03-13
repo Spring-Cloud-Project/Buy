@@ -1,4 +1,4 @@
- package com.CchuaSpace.Service;
+ package com.cchuaspace.service;
 
 import java.util.List;
 
@@ -20,13 +20,14 @@ public interface ComputeClient {
 compute-service
 */
 
-import com.CchuaSpace.Hystrix.CommodityCatalogHystrix;
-import com.CchuaSpace.Hystrix.CommodityInfoHystrix;
-import com.CchuaSpace.Hystrix.ComputeClientHystrix;
-import com.CchuaSpace.Hystrix.TableUserClientHystrix;
-import com.CchuaSpace.Model.CommodityCatalog;
-import com.CchuaSpace.Model.CommodityInfo;
-import com.CchuaSpace.Model.TableUser;
+import com.cchuaspace.hystrix.CommodityCatalogHystrix;
+import com.cchuaspace.hystrix.CommodityInfoHystrix;
+import com.cchuaspace.hystrix.ComputeClientHystrix;
+import com.cchuaspace.hystrix.TableUserClientHystrix;
+import com.cchuaspace.model.CommodityCatalog;
+import com.cchuaspace.model.CommodityInfo;
+import com.cchuaspace.model.PaginationVo;
+import com.cchuaspace.model.TableUser;
 
 
 @FeignClient(value = "Server-Service", fallback = CommodityCatalogHystrix.class)
@@ -35,23 +36,26 @@ public interface CommodityCatalogClient {
 
 
 	
-	
+
+	/*--------------- -----<----*查询*---->--- ----------------------*/
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/Catalog/SelectCatalog")
-	ResponseEntity<List<CommodityCatalog>> SelectCatalog(String selectCommodityByNumber);
-
+	ResponseEntity<PaginationVo> SelectCatalog(String selectCommodityByNumber);
+	/*--------------- -----<----*删除*---->--- ----------------------*/
 
 	@RequestMapping(method = RequestMethod.POST, value = "/Catalog/DeleteCatalog")
-	ResponseEntity<List<CommodityCatalog>> DeleteCatalog(String selectCommodityByNumber);
+	ResponseEntity<PaginationVo> DeleteCatalog(String selectCommodityByNumber);
 
 	@RequestMapping(method = RequestMethod.POST, value = "/Catalog/DeleteCatalogById")
-	ResponseEntity<List<CommodityCatalog>> DeleteCatalogById(String selectCommodityByNumber);
+	ResponseEntity<PaginationVo> DeleteCatalogById(String selectCommodityByNumber);
+
+	/*--------------- -----<----*增加*---->--- ----------------------*/
 
 	@RequestMapping(method = RequestMethod.POST, value = "/Catalog/InsertCommodityInfo")
-	ResponseEntity<List<CommodityCatalog>> InsertCommodityInfo(String selectCommodityByNumber);
-
+	ResponseEntity<PaginationVo> InsertCommodityInfo(String selectCommodityByNumber);
+	/*--------------- -----<----*修改*---->--- ----------------------*/
 	@RequestMapping(method = RequestMethod.POST, value = "/Catalog/UpdateCatalog")
-	ResponseEntity<List<CommodityCatalog>> UpdateCatalog(String selectCommodityByNumber);
+	ResponseEntity<PaginationVo> UpdateCatalog(String selectCommodityByNumber);
 	
 }
 

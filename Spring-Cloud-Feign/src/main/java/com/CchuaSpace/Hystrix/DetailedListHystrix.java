@@ -1,4 +1,4 @@
-package com.CchuaSpace.Hystrix;
+package com.cchuaspace.hystrix;
 
 import java.util.List;
 
@@ -6,63 +6,64 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import com.CchuaSpace.Model.DetailedList;
-import com.CchuaSpace.Model.TableUser;
-import com.CchuaSpace.Service.ComputeClient;
-import com.CchuaSpace.Service.DetailedListClient;
+import com.cchuaspace.model.DetailedList;
+import com.cchuaspace.model.PaginationVo;
+import com.cchuaspace.model.TableUser;
+import com.cchuaspace.service.ComputeClient;
+import com.cchuaspace.service.DetailedListClient;
 
 @Component
 public class DetailedListHystrix implements DetailedListClient {
 
 	@Override
-	public ResponseEntity<List<DetailedList>> SelectByUserId(String selectByUserId) {
-		return new ResponseEntity<List<DetailedList>>(HttpStatus.FORBIDDEN);
+	public ResponseEntity<PaginationVo> SelectByUserId(String selectByUserId) {
+		return new ResponseEntity<PaginationVo>(HttpStatus.FORBIDDEN);
 	}
 
 	@Override
-	public ResponseEntity<List<DetailedList>> SelectByDetailedId(String selectByDetailedId) {
+	public ResponseEntity<PaginationVo> SelectByDetailedId(String selectByDetailedId) {
 
-		return new ResponseEntity<List<DetailedList>>(HttpStatus.FORBIDDEN);
+		return new ResponseEntity<PaginationVo>(HttpStatus.FORBIDDEN);
 	}
 
 	@Override
-	public ResponseEntity<List<DetailedList>> DeleteByCommodity(String deleteByDetailedId) {
+	public ResponseEntity<PaginationVo> DeleteByCommodity(String deleteByDetailedId) {
 
-		return new ResponseEntity<List<DetailedList>>(HttpStatus.FORBIDDEN);
+		return new ResponseEntity<PaginationVo>(HttpStatus.FORBIDDEN);
 	}
 
 	@Override
-	public ResponseEntity<List<DetailedList>> DeleteBydetailedId(String deleteByNumber) {
+	public ResponseEntity<PaginationVo> DeleteBydetailedId(String deleteByNumber) {
 
-		return new ResponseEntity<List<DetailedList>>(HttpStatus.FORBIDDEN);
+		return new ResponseEntity<PaginationVo>(HttpStatus.FORBIDDEN);
 	}
 
 	@Override
-	public ResponseEntity<List<DetailedList>> DeleteAll(String deleteAll) {
+	public ResponseEntity<PaginationVo> DeleteAll(String deleteAll) {
 
-		return new ResponseEntity<List<DetailedList>>(HttpStatus.FORBIDDEN);
+		return new ResponseEntity<PaginationVo>(HttpStatus.FORBIDDEN);
 	}
 
 	@Override
-	public ResponseEntity<List<DetailedList>> InsertDetailed(String insertDetailed) {
+	public ResponseEntity<PaginationVo> InsertDetailed(String insertDetailed) {
 
-		return new ResponseEntity<List<DetailedList>>(HttpStatus.FORBIDDEN);
+		return new ResponseEntity<PaginationVo>(HttpStatus.FORBIDDEN);
 	}
 
 	@Override
-	public ResponseEntity<List<DetailedList>> UpdateByUserId(String updateByUserId) {
+	public ResponseEntity<PaginationVo> UpdateByUserId(String updateByUserId) {
 
-		return new ResponseEntity<List<DetailedList>>(HttpStatus.FORBIDDEN);
+		return new ResponseEntity<PaginationVo>(HttpStatus.FORBIDDEN);
 	}
 
 	@Override
-	public ResponseEntity<List<DetailedList>> UpdateByDetailedId(String updateByDetailedId) {
-		return new ResponseEntity<List<DetailedList>>(HttpStatus.FORBIDDEN);
+	public ResponseEntity<PaginationVo> UpdateByDetailedId(String updateByDetailedId) {
+		return new ResponseEntity<PaginationVo>(HttpStatus.FORBIDDEN);
 	}
 
 	@Override
-	public ResponseEntity<List<DetailedList>> DeleteCommodity(String deleteByNumber) {
-		return new ResponseEntity<List<DetailedList>>(HttpStatus.FORBIDDEN);
+	public ResponseEntity<PaginationVo> DeleteCommodity(String deleteByNumber) {
+		return new ResponseEntity<PaginationVo>(HttpStatus.FORBIDDEN);
 		
 	}
 
