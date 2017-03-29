@@ -3,9 +3,15 @@ package com.cchuaspace.pojo;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Component
+@Scope("prototype")
+
 public class BaseObjectVo implements Serializable {
 
 	/**
@@ -24,11 +30,16 @@ public class BaseObjectVo implements Serializable {
 	private String ErrorCode;
 
 	private String ErrorSolve;
+	
+	private String Token;
 
 	private String SqlState;
 
 	private List<?> list;
+	
+	private String HtmlState;
 
+	
 	public String getErrorCode() {
 		return ErrorCode;
 	}
@@ -91,6 +102,22 @@ public class BaseObjectVo implements Serializable {
 
 	public void setErrorSolve(String errorSolve) {
 		ErrorSolve = errorSolve;
+	}
+
+	public String getToken() {
+		return Token;
+	}
+
+	public void setToken(String token) {
+		Token = token;
+	}
+
+	public String getHtmlState() {
+		return HtmlState;
+	}
+
+	public void setHtmlState(String htmlState) {
+		HtmlState = htmlState;
 	}
 
 }
